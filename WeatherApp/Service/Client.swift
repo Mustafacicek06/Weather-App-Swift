@@ -70,6 +70,7 @@ class Client {
                 completion(response, nil)
             } else {
                 completion(nil, error)
+               
             }
         }
     }

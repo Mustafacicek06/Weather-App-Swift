@@ -14,14 +14,11 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
     }
 
     @IBAction private func showDetailButtonOnPressed(_ sender: Any) {
         
         if let fittedText =  cityTextField.text,fittedText.isEmpty {
-           
             AlertManager.shared.showAlert(with: .emptyInput)
         }
         else {

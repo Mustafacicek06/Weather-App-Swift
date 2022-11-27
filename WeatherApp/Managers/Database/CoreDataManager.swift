@@ -9,7 +9,7 @@ import UIKit
 
 enum CoreDataKeys: String {
     case cityName
-    case isFavorite
+
 }
 
 final class CoreDataManager {
@@ -21,11 +21,11 @@ final class CoreDataManager {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    func saveCity(cityName: String, isFavourite: Bool) -> City? {
+    func saveCity(cityName: String) -> City? {
         let entity = NSEntityDescription.entity(forEntityName: "City", in: managedContext)!
         let city = NSManagedObject(entity: entity, insertInto: managedContext)
         city.setValue(cityName, forKeyPath: CoreDataKeys.cityName.rawValue)
-        city.setValue(isFavourite, forKeyPath: CoreDataKeys.isFavorite.rawValue)
+
         
         do {
             try managedContext.save()
@@ -47,4 +47,15 @@ final class CoreDataManager {
         }
         return []
     }
+    
+    func deleteCity(deleteItem: String) {
+        getCities().forEach { city in
+            if city.cityName == deleteItem {
+                managedContext.delete(city)
+                try! managedContext.save()
+                
+            }
+        }
+    }
+     
 }

@@ -20,11 +20,13 @@ class CityDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Like", style: .plain, target: self, action: #selector(favoriteButtonOnPressed))
         getSelectedCityWeather()
         
     }
     
     // MARK: Private Functions
+    
     private func getSelectedCityWeather() {
         Client.getWeatherSelectedCity(to: stringLabel ?? "") { [weak self] response, error in
             if let response = response {
@@ -38,4 +40,12 @@ class CityDetailViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: Actions
+    
+    @objc func favoriteButtonOnPressed() {
+        guard let cityName = cityLabel.text else { return }
+        CoreDataManager.shared.saveCity(cityName: cityName)
+    }
+    
 }

@@ -80,29 +80,29 @@
             <objects>
                 <viewController storyboardIdentifier="CityDetailViewController" id="Vhr-Kv-ExS" customClass="CityDetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nnS-1z-guV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-Vr-PZS">
-                                <rect key="frame" x="128.66666666666666" y="190" width="135.99999999999997" height="36"/>
+                                <rect key="frame" x="128.66666666666666" y="146" width="135.99999999999997" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celcius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xet-tb-5Du">
-                                <rect key="frame" x="148.66666666666666" y="253" width="96" height="36"/>
+                                <rect key="frame" x="148.66666666666666" y="209" width="96" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ3-V4-vqi">
-                                <rect key="frame" x="144" y="135" width="105" height="36"/>
+                                <rect key="frame" x="144" y="91" width="105" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="güncel zaman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7H-9L-ywA">
-                                <rect key="frame" x="124.66666666666669" y="329" width="144" height="28.666666666666686"/>
+                                <rect key="frame" x="124.66666666666669" y="285" width="144" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -136,14 +136,30 @@
         <!--Favorites-->
         <scene sceneID="Njj-vz-6WF">
             <objects>
-                <viewController id="X6Q-l3-4p7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteListViewController" id="X6Q-l3-4p7" customClass="FavoriteListViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HCF-qW-EVK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TnM-lW-oS4">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Mj4-xA-sU5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mj4-xA-sU5" firstAttribute="bottom" secondItem="TnM-lW-oS4" secondAttribute="bottom" id="DEr-Mr-s04"/>
+                            <constraint firstItem="TnM-lW-oS4" firstAttribute="leading" secondItem="Mj4-xA-sU5" secondAttribute="leading" id="g6d-Ws-CT5"/>
+                            <constraint firstItem="TnM-lW-oS4" firstAttribute="top" secondItem="Mj4-xA-sU5" secondAttribute="top" id="hXY-P2-4HC"/>
+                            <constraint firstItem="Mj4-xA-sU5" firstAttribute="trailing" secondItem="TnM-lW-oS4" secondAttribute="trailing" id="td9-vh-335"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" selectedImage="heart.fill" id="YK3-5u-NZ1"/>
+                    <connections>
+                        <outlet property="tableView" destination="TnM-lW-oS4" id="e14-da-r3R"/>
+                        <segue destination="Vhr-Kv-ExS" kind="show" identifier="CityDetailViewController" id="eK1-Ql-dO4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5k8-s3-d8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,6 +184,9 @@
             <point key="canvasLocation" x="-543" y="121"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eK1-Ql-dO4"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
