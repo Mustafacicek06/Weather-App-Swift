@@ -19,3 +19,9 @@ struct CustomError: Decodable {
     let type: String?
     let info: String?
 }
+
+extension BaseResponse: LocalizedError {
+    var errorDescription: String? {
+        return error?.info
+    }
+}

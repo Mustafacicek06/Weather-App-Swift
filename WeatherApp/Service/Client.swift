@@ -11,7 +11,9 @@ class Client {
 
     enum Endpoints {
         static let base = "https://api.weatherstack.com/current"
-
+        
+        var key = "32107312f11d2020ca76c96d57f95a01"
+        
         case assets
         case markets
         case marketDetail(String)
@@ -65,10 +67,10 @@ class Client {
         return task
     }
 
-    class func getWeatherSelectedCity(completion: @escaping ([AssetModel]?, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.assets.url, responseType: GetAssetResponseModel.self) { response, error in
+    class func getWeatherSelectedCity(completion: @escaping (WeatherModel?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.assets.url, responseType: WeatherModel.self) { response, error in
             if let response = response {
-                completion(response.result, nil)
+                completion(response, nil)
             } else {
                 completion(nil, error)
             }

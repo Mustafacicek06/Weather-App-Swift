@@ -16,6 +16,7 @@
 		0833E87129333C3600F82C94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0833E86F29333C3600F82C94 /* LaunchScreen.storyboard */; };
 		0833E88429333EC700F82C94 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E88329333EC700F82C94 /* Client.swift */; };
 		0833E8862933400F00F82C94 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E8852933400F00F82C94 /* BaseResponse.swift */; };
+		0833E8882933419100F82C94 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E8872933419100F82C94 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0833E87229333C3600F82C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0833E88329333EC700F82C94 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		0833E8852933400F00F82C94 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		0833E8872933419100F82C94 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		0833E87E29333EA500F82C94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0833E8872933419100F82C94 /* WeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				0833E86C29333C3500F82C94 /* WeatherApp.xcdatamodeld in Sources */,
 				0833E86629333C3500F82C94 /* ViewController.swift in Sources */,
 				0833E86229333C3500F82C94 /* AppDelegate.swift in Sources */,
+				0833E8882933419100F82C94 /* WeatherModel.swift in Sources */,
 				0833E8862933400F00F82C94 /* BaseResponse.swift in Sources */,
 				0833E88429333EC700F82C94 /* Client.swift in Sources */,
 				0833E86429333C3500F82C94 /* SceneDelegate.swift in Sources */,
