@@ -25,7 +25,7 @@ final class AlertManager: AlertShowable {
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
         
         DispatchQueue.main.async {
-            
+            UIApplication.topViewController()?.present(alert, animated: true)
         }
     }
 }

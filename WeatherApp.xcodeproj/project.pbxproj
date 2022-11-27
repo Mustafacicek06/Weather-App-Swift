@@ -20,6 +20,7 @@
 		0833E88B2933492900F82C94 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E88A2933492900F82C94 /* CityDetailViewController.swift */; };
 		0833E88F29334B8B00F82C94 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E88E29334B8B00F82C94 /* AlertManager.swift */; };
 		0833E89129334BA200F82C94 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E89029334BA200F82C94 /* AlertError.swift */; };
+		0833E8942933568200F82C94 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E8932933568200F82C94 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0833E88A2933492900F82C94 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		0833E88E29334B8B00F82C94 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		0833E89029334BA200F82C94 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		0833E8932933568200F82C94 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		0833E86029333C3500F82C94 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				0833E8922933565800F82C94 /* Extension */,
 				0833E88C29334B6300F82C94 /* Managers */,
 				0833E88229333EBD00F82C94 /* Service */,
 				0833E87929333E7F00F82C94 /* Features */,
@@ -201,6 +204,14 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		0833E8922933565800F82C94 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0833E8932933568200F82C94 /* UIApplication+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +291,7 @@
 				0833E89129334BA200F82C94 /* AlertError.swift in Sources */,
 				0833E8862933400F00F82C94 /* BaseResponse.swift in Sources */,
 				0833E88429333EC700F82C94 /* Client.swift in Sources */,
+				0833E8942933568200F82C94 /* UIApplication+Extension.swift in Sources */,
 				0833E86429333C3500F82C94 /* SceneDelegate.swift in Sources */,
 				0833E88F29334B8B00F82C94 /* AlertManager.swift in Sources */,
 			);

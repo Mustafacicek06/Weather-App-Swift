@@ -46,7 +46,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Hava Durumunu Göster"/>
                                 <connections>
                                     <action selector="showDetailButtonOnPressed:" destination="1hf-6K-sCm" eventType="touchUpInside" id="UJ3-Yx-162"/>
-                                    <segue destination="Vhr-Kv-ExS" kind="show" identifier="toDetailCity" id="PQJ-dz-Bmt"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şehir giriniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-zZ-O2I">
@@ -69,53 +68,66 @@
                     <navigationItem key="navigationItem" id="WCb-eB-mA7"/>
                     <connections>
                         <outlet property="cityTextField" destination="fFc-zZ-O2I" id="ht7-1P-qe3"/>
+                        <segue destination="Vhr-Kv-ExS" kind="show" id="qsF-Ka-nop"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2c-KJ-FwI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1222" y="1736"/>
         </scene>
-        <!--View Controller-->
+        <!--City Detail View Controller-->
         <scene sceneID="eXX-kl-Pjy">
             <objects>
-                <viewController id="Vhr-Kv-ExS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityDetailViewController" id="Vhr-Kv-ExS" customClass="CityDetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nnS-1z-guV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-Vr-PZS">
-                                <rect key="frame" x="128" y="190" width="136" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-Vr-PZS">
+                                <rect key="frame" x="128.66666666666666" y="190" width="135.99999999999997" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celcius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xet-tb-5Du">
-                                <rect key="frame" x="148" y="253" width="96" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celcius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xet-tb-5Du">
+                                <rect key="frame" x="148.66666666666666" y="253" width="96" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ3-V4-vqi">
-                                <rect key="frame" x="148" y="135" width="105" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ3-V4-vqi">
+                                <rect key="frame" x="144" y="135" width="105" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="güncel zaman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7H-9L-ywA">
-                                <rect key="frame" x="106" y="329" width="180" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="güncel zaman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7H-9L-ywA">
+                                <rect key="frame" x="124.66666666666669" y="329" width="144" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HVw-8q-MCb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wJ3-V4-vqi" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="4lU-US-xyB"/>
+                            <constraint firstItem="KPr-Vr-PZS" firstAttribute="top" secondItem="wJ3-V4-vqi" secondAttribute="bottom" constant="19" id="QBH-y4-tas"/>
+                            <constraint firstItem="h7H-9L-ywA" firstAttribute="top" secondItem="xet-tb-5Du" secondAttribute="bottom" constant="40" id="TKI-2N-I6U"/>
+                            <constraint firstItem="h7H-9L-ywA" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="TxR-Sy-lO7"/>
+                            <constraint firstItem="xet-tb-5Du" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="nEd-75-j2m"/>
+                            <constraint firstItem="KPr-Vr-PZS" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="oMM-2c-WL2"/>
+                            <constraint firstItem="wJ3-V4-vqi" firstAttribute="top" secondItem="HVw-8q-MCb" secondAttribute="top" constant="32" id="tj6-K6-D0s"/>
+                            <constraint firstItem="xet-tb-5Du" firstAttribute="top" secondItem="KPr-Vr-PZS" secondAttribute="bottom" constant="27" id="zkp-tC-rjV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CAW-pn-6k1"/>
+                    <connections>
+                        <outlet property="celciusLabel" destination="xet-tb-5Du" id="DIH-Fe-rHv"/>
+                        <outlet property="cityLabel" destination="KPr-Vr-PZS" id="YIt-8C-ncc"/>
+                        <outlet property="countryLabel" destination="wJ3-V4-vqi" id="e5h-KV-Mot"/>
+                        <outlet property="timeLabel" destination="h7H-9L-ywA" id="2zE-E7-hnu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSg-18-I0g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
