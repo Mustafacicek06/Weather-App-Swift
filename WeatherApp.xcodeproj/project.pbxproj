@@ -21,6 +21,8 @@
 		0833E88F29334B8B00F82C94 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E88E29334B8B00F82C94 /* AlertManager.swift */; };
 		0833E89129334BA200F82C94 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E89029334BA200F82C94 /* AlertError.swift */; };
 		0833E8942933568200F82C94 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E8932933568200F82C94 /* UIApplication+Extension.swift */; };
+		0833E89729335E9300F82C94 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E89629335E9300F82C94 /* CoreDataManager.swift */; };
+		0833E8992933605300F82C94 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833E8982933605300F82C94 /* FavoriteListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		0833E88E29334B8B00F82C94 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		0833E89029334BA200F82C94 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 		0833E8932933568200F82C94 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		0833E89629335E9300F82C94 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0833E8982933605300F82C94 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 		0833E87F29333EAD00F82C94 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0833E8982933605300F82C94 /* FavoriteListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 		0833E88C29334B6300F82C94 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				0833E89529335E8700F82C94 /* Database */,
 				0833E88D29334B6900F82C94 /* Alert */,
 			);
 			path = Managers;
@@ -210,6 +216,14 @@
 				0833E8932933568200F82C94 /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0833E89529335E8700F82C94 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0833E89629335E9300F82C94 /* CoreDataManager.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +303,9 @@
 				0833E8882933419100F82C94 /* WeatherModel.swift in Sources */,
 				0833E88B2933492900F82C94 /* CityDetailViewController.swift in Sources */,
 				0833E89129334BA200F82C94 /* AlertError.swift in Sources */,
+				0833E89729335E9300F82C94 /* CoreDataManager.swift in Sources */,
 				0833E8862933400F00F82C94 /* BaseResponse.swift in Sources */,
+				0833E8992933605300F82C94 /* FavoriteListViewController.swift in Sources */,
 				0833E88429333EC700F82C94 /* Client.swift in Sources */,
 				0833E8942933568200F82C94 /* UIApplication+Extension.swift in Sources */,
 				0833E86429333C3500F82C94 /* SceneDelegate.swift in Sources */,

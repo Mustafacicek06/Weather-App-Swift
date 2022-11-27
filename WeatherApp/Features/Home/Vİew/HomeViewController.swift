@@ -10,44 +10,26 @@ import UIKit
 final class HomeViewController: UIViewController {
 
     
-    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet private weak var cityTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("calisti")
+        
     
     }
-    
-    private func getSelectedCityWeather() {
+
+    @IBAction private func showDetailButtonOnPressed(_ sender: Any) {
+        
         if let fittedText =  cityTextField.text,fittedText.isEmpty {
-            let alert = UIAlertController(title: "Alert", message: "Gelir alanınız boş. Lütfen eklemek istediğiniz değeri girin", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: {
-                return
-            }
-            )
+           
+            AlertManager.shared.showAlert(with: .emptyInput)
         }
         else {
-            Client.getWeatherSelectedCity(to: cityTextField?.text ?? "") { response, error in
-                if let response = response {
-                    print(response)
-                }
-                else {
-                    print(error?.localizedDescription)
-                }
-            }
+            guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: CityDetailViewController.self)) as? CityDetailViewController else { return }
+            detailVC.stringLabel = cityTextField.text
+                     self.navigationController?.pushViewController(detailVC, animated: true)
+            
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "toDetailCity" {
-                
-            }
-        }
-    
-    @IBAction func showDetailButtonOnPressed(_ sender: Any) {
-        
-        getSelectedCityWeather()
     }
     
 
