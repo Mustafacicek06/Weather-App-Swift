@@ -10,22 +10,16 @@ import Foundation
 class Client {
 
     enum Endpoints {
-        static let base = "https://api.weatherstack.com/current"
-        
-        var key = "32107312f11d2020ca76c96d57f95a01"
-        
-        case assets
-        case markets
-        case marketDetail(String)
+        static let base = "http://api.weatherstack.com/current?access_key=32107312f11d2020ca76c96d57f95a01"
+   
+        case weather(String)
 
         var stringValue: String {
             switch self {
-            case .assets:
-                return Endpoints.base + "/getassets"
-            case .markets:
-                return Endpoints.base + "/getmarkets"
-            case .marketDetail(let marketId):
-                return Endpoints.base + "/getmarkethistory?market=\(marketId)"
+            case .weather(let weatherCity):
+                let weatherNameUrlEncoded = weatherCity.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+                                   
+                return Endpoints.base + "&query=\(weatherNameUrlEncoded ?? "")"
             }
         }
 
@@ -67,8 +61,11 @@ class Client {
         return task
     }
 
-    class func getWeatherSelectedCity(completion: @escaping (WeatherModel?, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.assets.url, responseType: WeatherModel.self) { response, error in
+    class func getWeatherSelectedCity(to city: String,completion: @escaping (WeatherModel?, Error?) -> Void) {
+        
+        taskForGETRequest(url: Endpoints.weather(city).url, responseType: WeatherModel.self) {
+            response, error in
+            print(Endpoints.weather(city).url)
             if let response = response {
                 completion(response, nil)
             } else {

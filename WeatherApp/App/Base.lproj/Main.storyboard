@@ -12,7 +12,7 @@
         <scene sceneID="XIX-VL-cOh">
             <objects>
                 <navigationController id="EMM-x6-HhN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="homekit" catalog="system" id="Typ-Wu-1EV"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" selectedImage="homekit" id="Typ-Wu-1EV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="odF-p9-60r">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,21 +25,101 @@
             </objects>
             <point key="canvasLocation" x="-1221" y="1008"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="fTd-L9-3tc">
             <objects>
-                <viewController id="1hf-6K-sCm" sceneMemberID="viewController">
+                <viewController id="1hf-6K-sCm" customClass="HomeViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnl-tC-YwL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsO-K1-wFi">
+                                <rect key="frame" x="175" y="123" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvH-7z-Bjy">
+                                <rect key="frame" x="95.666666666666686" y="468" width="202" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Hava Durumunu Göster"/>
+                                <connections>
+                                    <action selector="showDetailButtonOnPressed:" destination="1hf-6K-sCm" eventType="touchUpInside" id="UJ3-Yx-162"/>
+                                    <segue destination="Vhr-Kv-ExS" kind="show" identifier="toDetailCity" id="PQJ-dz-Bmt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şehir giriniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-zZ-O2I">
+                                <rect key="frame" x="100" y="389" width="193" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rjf-ln-QbW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NvH-7z-Bjy" firstAttribute="centerX" secondItem="vnl-tC-YwL" secondAttribute="centerX" id="6Gp-53-20d"/>
+                            <constraint firstItem="fFc-zZ-O2I" firstAttribute="top" secondItem="rjf-ln-QbW" secondAttribute="top" constant="286" id="6in-pJ-r1b"/>
+                            <constraint firstItem="NvH-7z-Bjy" firstAttribute="top" secondItem="fFc-zZ-O2I" secondAttribute="bottom" constant="45" id="NpX-LF-1h7"/>
+                            <constraint firstItem="fFc-zZ-O2I" firstAttribute="leading" secondItem="rjf-ln-QbW" secondAttribute="leading" constant="100" id="e2t-8x-Ek3"/>
+                            <constraint firstItem="rjf-ln-QbW" firstAttribute="trailing" secondItem="fFc-zZ-O2I" secondAttribute="trailing" constant="100" id="fHD-d7-5S9"/>
+                            <constraint firstItem="fFc-zZ-O2I" firstAttribute="centerX" secondItem="vnl-tC-YwL" secondAttribute="centerX" id="kNh-hp-hN8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WCb-eB-mA7"/>
+                    <connections>
+                        <outlet property="cityTextField" destination="fFc-zZ-O2I" id="ht7-1P-qe3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2c-KJ-FwI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1222" y="1736"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eXX-kl-Pjy">
+            <objects>
+                <viewController id="Vhr-Kv-ExS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nnS-1z-guV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-Vr-PZS">
+                                <rect key="frame" x="128" y="190" width="136" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celcius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xet-tb-5Du">
+                                <rect key="frame" x="148" y="253" width="96" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ3-V4-vqi">
+                                <rect key="frame" x="148" y="135" width="105" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="güncel zaman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7H-9L-ywA">
+                                <rect key="frame" x="106" y="329" width="180" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HVw-8q-MCb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CAW-pn-6k1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSg-18-I0g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1222" y="2432"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="Njj-vz-6WF">
@@ -51,7 +131,7 @@
                         <viewLayoutGuide key="safeArea" id="Mj4-xA-sU5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" selectedImage="heart.fill" catalog="system" id="YK3-5u-NZ1"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" selectedImage="heart.fill" id="YK3-5u-NZ1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5k8-s3-d8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,8 +147,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="X6Q-l3-4p7" kind="relationship" relationship="viewControllers" id="Nta-Vf-pj9"/>
                         <segue destination="EMM-x6-HhN" kind="relationship" relationship="viewControllers" id="MGc-yq-tKT"/>
+                        <segue destination="X6Q-l3-4p7" kind="relationship" relationship="viewControllers" id="Nta-Vf-pj9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0Q-jF-zrc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
