@@ -41,14 +41,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvH-7z-Bjy">
-                                <rect key="frame" x="95.666666666666686" y="468" width="202" height="35"/>
+                                <rect key="frame" x="129.33333333333337" y="468" width="134.66666666666663" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Hava Durumunu Göster"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show Weather"/>
                                 <connections>
                                     <action selector="showDetailButtonOnPressed:" destination="1hf-6K-sCm" eventType="touchUpInside" id="UJ3-Yx-162"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şehir giriniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-zZ-O2I">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-zZ-O2I">
                                 <rect key="frame" x="100" y="389" width="193" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -80,43 +80,60 @@
             <objects>
                 <viewController storyboardIdentifier="CityDetailViewController" id="Vhr-Kv-ExS" customClass="CityDetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nnS-1z-guV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-Vr-PZS">
-                                <rect key="frame" x="128.66666666666666" y="146" width="135.99999999999997" height="36"/>
+                                <rect key="frame" x="128.66666666666666" y="190" width="135.99999999999997" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celcius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xet-tb-5Du">
-                                <rect key="frame" x="148.66666666666666" y="209" width="96" height="36"/>
+                                <rect key="frame" x="148.66666666666666" y="253" width="96" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ3-V4-vqi">
-                                <rect key="frame" x="144" y="91" width="105" height="36"/>
+                                <rect key="frame" x="144" y="135" width="105" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="güncel zaman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7H-9L-ywA">
-                                <rect key="frame" x="124.66666666666669" y="285" width="144" height="28.666666666666686"/>
+                                <rect key="frame" x="124.66666666666669" y="347" width="144" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ7-5q-WqO">
+                                <rect key="frame" x="171.66666666666666" y="307" width="50" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AgA-Lw-YVb">
+                                <rect key="frame" x="96.666666666666686" y="462" width="200" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="OH1-yl-PY0"/>
+                                    <constraint firstAttribute="height" constant="128" id="ZaA-Ry-xbW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HVw-8q-MCb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nQ7-5q-WqO" firstAttribute="top" secondItem="xet-tb-5Du" secondAttribute="bottom" constant="18" id="05A-0F-Hki"/>
                             <constraint firstItem="wJ3-V4-vqi" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="4lU-US-xyB"/>
+                            <constraint firstItem="nQ7-5q-WqO" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="7f0-sd-u4y"/>
                             <constraint firstItem="KPr-Vr-PZS" firstAttribute="top" secondItem="wJ3-V4-vqi" secondAttribute="bottom" constant="19" id="QBH-y4-tas"/>
-                            <constraint firstItem="h7H-9L-ywA" firstAttribute="top" secondItem="xet-tb-5Du" secondAttribute="bottom" constant="40" id="TKI-2N-I6U"/>
                             <constraint firstItem="h7H-9L-ywA" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="TxR-Sy-lO7"/>
+                            <constraint firstItem="h7H-9L-ywA" firstAttribute="top" secondItem="nQ7-5q-WqO" secondAttribute="bottom" constant="14" id="gTd-Hh-7SG"/>
                             <constraint firstItem="xet-tb-5Du" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="nEd-75-j2m"/>
                             <constraint firstItem="KPr-Vr-PZS" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="oMM-2c-WL2"/>
+                            <constraint firstItem="AgA-Lw-YVb" firstAttribute="centerX" secondItem="nnS-1z-guV" secondAttribute="centerX" id="re1-hj-1Ek"/>
+                            <constraint firstItem="AgA-Lw-YVb" firstAttribute="top" secondItem="h7H-9L-ywA" secondAttribute="bottom" constant="86.329999999999998" id="sF8-eP-qRH"/>
                             <constraint firstItem="wJ3-V4-vqi" firstAttribute="top" secondItem="HVw-8q-MCb" secondAttribute="top" constant="32" id="tj6-K6-D0s"/>
                             <constraint firstItem="xet-tb-5Du" firstAttribute="top" secondItem="KPr-Vr-PZS" secondAttribute="bottom" constant="27" id="zkp-tC-rjV"/>
                         </constraints>
@@ -126,7 +143,9 @@
                         <outlet property="celciusLabel" destination="xet-tb-5Du" id="DIH-Fe-rHv"/>
                         <outlet property="cityLabel" destination="KPr-Vr-PZS" id="YIt-8C-ncc"/>
                         <outlet property="countryLabel" destination="wJ3-V4-vqi" id="e5h-KV-Mot"/>
+                        <outlet property="imageView" destination="AgA-Lw-YVb" id="A9J-gP-UZ7"/>
                         <outlet property="timeLabel" destination="h7H-9L-ywA" id="2zE-E7-hnu"/>
+                        <outlet property="weatherDescription" destination="nQ7-5q-WqO" id="aYS-Xh-6S1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSg-18-I0g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -185,7 +204,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eK1-Ql-dO4"/>
+        <segue reference="qsF-Ka-nop"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>

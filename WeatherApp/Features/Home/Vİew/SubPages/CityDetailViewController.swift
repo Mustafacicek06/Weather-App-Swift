@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CityDetailViewController: UIViewController {
     // MARK: Outlets
@@ -13,6 +14,9 @@ class CityDetailViewController: UIViewController {
     @IBOutlet private weak var cityLabel: UILabel!
     @IBOutlet private weak var celciusLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var weatherDescription: UILabel!
     
     // MARK: Variables
     var stringLabel: String?
@@ -34,6 +38,12 @@ class CityDetailViewController: UIViewController {
                 self?.cityLabel.text = "City: \(response.location?.name ?? "")"
                 self?.celciusLabel.text = "Temperature: \(response.current?.temperature ?? 0)° C"
                 self?.timeLabel.text  = "Time:  \(response.location?.localtime ?? "")"
+                
+                self?.weatherDescription.text = "Weather Description: \( response.current?.weatherDescriptions?[0] ?? "")"
+                
+                if let url = URL(string: "\(response.current?.weatherIcons?[0] ?? "not found")" ) {
+                    self?.imageView.kf.setImage(with: url)
+                                }
             }
             else {
                 print(error?.localizedDescription)
