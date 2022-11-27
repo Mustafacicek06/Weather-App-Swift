@@ -21,7 +21,7 @@ extension AlertError: CustomStringConvertible {
         case .wrongInput:
             return "Please enter a valid value."
         case .success:
-            return "New employee was successfully added."
+            return "Weather saved successfully."
         
         }
     }

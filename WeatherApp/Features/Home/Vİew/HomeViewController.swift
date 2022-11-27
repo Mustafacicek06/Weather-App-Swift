@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
     @IBAction private func showDetailButtonOnPressed(_ sender: Any) {
         
         if let fittedText =  cityTextField.text,fittedText.isEmpty {
-            AlertManager.shared.showAlert(with: .emptyInput)
+            AlertManager.shared.showAlert(with: .emptyInput,title: "Error")
         }
         else {
             guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: CityDetailViewController.self)) as? CityDetailViewController else { return }

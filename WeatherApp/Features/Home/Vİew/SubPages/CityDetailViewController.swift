@@ -56,6 +56,7 @@ class CityDetailViewController: UIViewController {
     @objc func favoriteButtonOnPressed() {
         guard let cityName = cityLabel.text else { return }
         CoreDataManager.shared.saveCity(cityName: cityName)
+        AlertManager.shared.showAlert(with: .success,title: "Success")
     }
     
 }
